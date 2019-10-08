@@ -1,0 +1,65 @@
+{% extends 'app/index.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="message-alert-{{message.tags}}"></div>
+
+{% endfor %}
+{% endif %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <br>
+                <h2>Contact us.</h2>
+                <hr>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{post_form|crispy}}
+                    <input type="submit" value="Send">
+                </form>
+
+
+            </div>
+            
+
+            <div class="col-md-6">
+                <br>
+                <div class="card">
+                    <div class="card-title text-center">
+                        <h2>Social Media</h2>
+                        <hr>
+                        <br><br><br>
+                        
+                    </div>
+                    <div class="card-body text-center " >
+                            <h1><a href="http://www.facebook.com/ahmedshazly85" target="blank"><i class="fa fa-facebook"></i></a></h1>
+                            <h1 class=""><a href="https://twitter.com/dr_ahmedshazly" target="blank"><i class="fa fa-twitter fa-xl"></i></a></h1>
+                            <h1><a href="https://www.linkedin.com/in/ahmed-el-shazly-9b851486/" target="blank"><i class="fa fa-linkedin fa-xl"></i></a></h1>
+                            <h1><a href="http://www.instagram.com/dr_ahmedshazly" target="blank"><i class="fa fa-instagram fa-xl"></i></a></h1>
+                            <h1><a href="mailto:dr.ahmedshazly@gmail.com" target="blank"><i class="fa fa-at"></i></a></h1>
+                            <h1><a href="tel:0123456789" target="blank"><i class="fa fa-phone"></i></a></h1>
+
+
+                    </div>
+
+                </div>
+                
+                
+                
+
+                </div>
+                <!-- <ul class="list-group">
+                    <span><h1><a href="http://www.facebook.com/ahmedshazly85"><i class="fa fa-facebook fa-xl"></i></a></h1></span>
+                    <span><h1><a href="http://www.facebook.com/ahmedshazly85"><i class="fa fa-facebook fa-xl"></i></a></h1></span>
+                </ul> -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

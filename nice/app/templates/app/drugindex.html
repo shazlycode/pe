@@ -1,0 +1,120 @@
+{% extends 'app/index.html' %}
+
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <hr>
+                <div>
+                    <h1 class="border font-weight-bold">Search Drug Index</h2>
+                </div>
+                <form method="GET" action="">
+                    <div class="form-group">
+
+
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Search by Trade Name" name="trade_name_box">
+
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" id="exampleInputPassword1"
+                            placeholder="Search by Generic Name" name="generic_name_box">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search by Uses"
+                            name="uses_box">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+
+
+
+            </div>
+        </div>
+        <hr size="80" >
+        <h3 class="mt-4 text-center font-weight-bold ">Search Results....({{drugs.count}})</h3>
+        <div class="row">
+            <div class="col">
+                    <table class="table" border="3px">
+                            <tr>
+                                <th>Trade Name</th>
+                                <th>Generic Name</th>
+                                <th>Uses</th>
+                                <th>Dosage</th>
+                                <th>Images</th>
+                            </tr>
+            
+            
+                            {% for drug in drugs %}
+                            <tr>
+                                <td class="text-dark">{{drug.trade_name}}</td>
+                                <td>{{drug.generic_name}}</td>
+                                <td>{{drug.uses}}</td>
+                                <td>{{drug.dosage}}</td>
+                                <td><img class="img-fluid rounded-circle border" width="60" height="60" src="{{drug.image.url}}"
+                                        alt="Drug image"></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div class="container-float">
+
+
+    <div class="row ">
+        <div class=" col-md-4 ml-6 ">
+
+            <table class="table" border="3px">
+                <tr>
+                    <th>Trade Name</th>
+                    <th>Generic Name</th>
+                    <th>Uses</th>
+                    <th>Dosage</th>
+                    <th>Images</th>
+                </tr>
+
+
+                {% for drug in drugs %}
+                <tr>
+                    <td>{{drug.trade_name}}</td>
+                    <td>{{drug.generic_name}}</td>
+                    <td>{{drug.uses}}</td>
+                    <td>{{drug.dosage}}</td>
+                    <td><img class="img-fluid rounded-circle border" width="60" height="60" src="{{drug.image.url}}"
+                            alt="Drug image"></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+
+
+
+
+            <ul>
+
+            <li>{{drug.trade_name}}</li>
+            <li>{{drug.generic_name}}</li>
+            <li>{{drug.uses}}</li>
+            <li>{{drug.dosage}}</li>
+
+        </ul> -->
+<!-- 
+        </div>
+        <div class="col-md-8 mt-2 border">
+            <h4>kjglkggglglhhbhjbhhj</h4>
+        </div>
+    </div>
+
+</div>  -->
+
+
+{% endblock content %}

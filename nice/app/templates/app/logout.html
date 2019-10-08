@@ -1,0 +1,28 @@
+{% extends 'app/index.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="message-alert-{{message.tags}}"></div>
+
+{% endfor %}
+{% endif %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <h2>Logout</h2>
+                <small>You have loggedout. <a href="{% url 'login' %}">Login again</a> </small>
+                <hr>
+                
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

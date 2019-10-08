@@ -49,7 +49,7 @@
 
 
 body {
-    color: #999;
+    color: rgb(10, 9, 9);
     font-size: 15px;
     font-family: 'Raleway', sans-serif;
     line-height: 1.80857;
@@ -3333,5 +3333,9 @@ select.mobile-device {
 }
 
 
+.table{
+    table-layout: fixed;
+    width: 30000px;
+}
 
 

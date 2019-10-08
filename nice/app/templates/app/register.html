@@ -1,0 +1,25 @@
+{% extends 'app/index.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <h2>Register</h2>
+                <hr>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ register|crispy }}
+                    <input type="submit" value="Register">
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}
