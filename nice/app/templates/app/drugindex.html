@@ -36,85 +36,41 @@
 
             </div>
         </div>
-        <hr size="80" >
+        <hr size="80">
         <h3 class="mt-4 text-center font-weight-bold ">Search Results....({{drugs.count}})</h3>
         <div class="row">
             <div class="col">
-                    <table class="table" border="3px">
-                            <tr>
-                                <th>Trade Name</th>
-                                <th>Generic Name</th>
-                                <th>Uses</th>
-                                <th>Dosage</th>
-                                <th>Images</th>
-                            </tr>
-            
-            
-                            {% for drug in drugs %}
-                            <tr>
-                                <td class="text-dark">{{drug.trade_name}}</td>
-                                <td>{{drug.generic_name}}</td>
-                                <td>{{drug.uses}}</td>
-                                <td>{{drug.dosage}}</td>
-                                <td><img class="img-fluid rounded-circle border" width="60" height="60" src="{{drug.image.url}}"
-                                        alt="Drug image"></td>
-                            </tr>
-                            {% endfor %}
-                        </table>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Trade Name</th>
+                            <th scope="col">Generic Name</th>
+                            <th scope="col">Uses</th>
+                            <th scope="col">Dosage</th>
+                            <!-- <th scope="col">Images</th> -->
+                        </tr>
+                    </thead>
+                    {% for drug in drugs %}
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{drug.trade_name}}</th>
+                            <td>{{drug.generic_name}}</td>
+                            <td>{{drug.uses}}</td>
+                            <td>{{drug.dosage}}</td>
+                            <!-- <td>{{drug.image.url}}</td> -->
+                        </tr>
+
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+
+
+
 
             </div>
         </div>
     </div>
 </section>
-<!-- <div class="container-float">
-
-
-    <div class="row ">
-        <div class=" col-md-4 ml-6 ">
-
-            <table class="table" border="3px">
-                <tr>
-                    <th>Trade Name</th>
-                    <th>Generic Name</th>
-                    <th>Uses</th>
-                    <th>Dosage</th>
-                    <th>Images</th>
-                </tr>
-
-
-                {% for drug in drugs %}
-                <tr>
-                    <td>{{drug.trade_name}}</td>
-                    <td>{{drug.generic_name}}</td>
-                    <td>{{drug.uses}}</td>
-                    <td>{{drug.dosage}}</td>
-                    <td><img class="img-fluid rounded-circle border" width="60" height="60" src="{{drug.image.url}}"
-                            alt="Drug image"></td>
-                </tr>
-                {% endfor %}
-            </table>
-
-
-
-
-
-
-            <ul>
-
-            <li>{{drug.trade_name}}</li>
-            <li>{{drug.generic_name}}</li>
-            <li>{{drug.uses}}</li>
-            <li>{{drug.dosage}}</li>
-
-        </ul> -->
-<!-- 
-        </div>
-        <div class="col-md-8 mt-2 border">
-            <h4>kjglkggglglhhbhjbhhj</h4>
-        </div>
-    </div>
-
-</div>  -->
-
 
 {% endblock content %}

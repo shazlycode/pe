@@ -3332,10 +3332,10 @@ select.mobile-device {
     bottom: 20px;
 }
 
-
-.table{
+.table.table-bordered{
     table-layout: fixed;
-    width: 30000px;
+    width: 1200px;
 }
+
 
 

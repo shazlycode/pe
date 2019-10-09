@@ -119,3 +119,21 @@ def contactus(request):
     
     return render(request, 'app/contactus.html', context)
 
+def recent(request):
+    context={
+        'title':'Recent Updates',
+    }
+    return render(request, 'app/recent.html', context)
+
+def interactions(request):
+    context={
+        'title':'Interactions',
+    }
+    return render(request, 'app/interactions.html', context)
+
+def quize(request):
+    context={
+        'title':'Quize',
+    }
+    return render(request, 'app/quize.html', context)
+
