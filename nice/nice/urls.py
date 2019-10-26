@@ -31,6 +31,7 @@ urlpatterns = [
     path('recent', views.recent, name='recent'),
     path('interactions', views.interactions, name='interactions'),
     path('quize', views.quize, name='quize'),
+    path('drug_details/<int:drug_id>/', views.drug_details, name='drug_details'),
     
     
     

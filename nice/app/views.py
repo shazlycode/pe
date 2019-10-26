@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from .models import DrugIndex
 from .forms import Register, Login, PostForm
 from django.contrib import messages
@@ -21,21 +21,31 @@ def about(request):
     return render(request, 'app/about.html', context)
 
 def drugindex(request):
-    drugs_result=None
+    trade_results=None
+    generic_results=None
+    uses_results=None
+    
     drugs= DrugIndex.objects.all()
     trade_name_box=request.GET.get('trade_name_box')
     generic_name_box=request.GET.get('generic_name_box')
     uses_box=request.GET.get('uses_box')
     if trade_name_box !='' and trade_name_box is not None:
-        drugs_result= drugs.filter(trade_name__icontains=trade_name_box)
+        trade_results= drugs.filter(trade_name__icontains=trade_name_box)
     elif generic_name_box !='' and generic_name_box is not None:
-        drugs_result= drugs.filter(generic_name__icontains=generic_name_box)
+        generic_results= drugs.filter(generic_name__icontains=generic_name_box)
     elif uses_box !='' and uses_box is not None:
-        drugs_result=drugs.filter(uses__icontains=uses_box)
+        uses_results=drugs.filter(uses__icontains=uses_box)
+    
+    
+    
     
     context={
         'title':'Drug Index',
-        'drugs': drugs_result,
+        'trade_results': trade_results,
+        'generic_results': generic_results,
+        'uses_results': uses_results,
+        
+        
     }
     return render(request, 'app/drugindex.html', context)
 
@@ -137,3 +147,15 @@ def quize(request):
     }
     return render(request, 'app/quize.html', context)
 
+
+def drug_details(request, drug_id):
+    results=get_object_or_404(DrugIndex, pk=drug_id)
+    
+    
+    
+    context={
+        'title':'Drug Details',
+        'results':results,
+    }
+    
+    return render(request, 'app/drug_details.html', context)

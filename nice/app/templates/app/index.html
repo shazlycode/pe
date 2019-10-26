@@ -20,20 +20,20 @@
 <meta name="author" content="">
 
 <!-- Site Icons -->
-<link rel="shortcut icon" href="static/images/favicon.png" type="image/x-icon" />
-<link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 <!-- Site CSS -->
-<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="{% static 'style.css' %}">
 <!-- Responsive CSS -->
-<link rel="stylesheet" href="static/css/responsive.css">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 <!-- Custom CSS -->
-<link rel="stylesheet" href="static/css/custom.css">
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
 <!-- Modernizer for Portfolio -->
-<script src="static/js/modernizer.js"></script>
+<script src="{% static 'js/modernizer.js' %}"></script>
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -45,7 +45,7 @@
 <body>
 
     <!-- LOADER -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader">
             <div class="loader__bar"></div>
             <div class="loader__bar"></div>
@@ -54,7 +54,7 @@
             <div class="loader__bar"></div>
             <div class="loader__ball"></div>
         </div>
-    </div><!-- end loader -->
+    </div>end loader -->
     <!-- END LOADER -->
 
     <div class="top-bar">
@@ -281,36 +281,34 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>Our Service</h3>
-                <p class="lead">Our Service unlimited solutions to all your business needs. in the installation package
-                    we prepare search engine optimization, social media support, we provide corporate identity and
-                    graphic design services.</p>
+                <p class="lead">Our Service includes medication management and real solutions for complete medication
+                    adheranc. We help the health care provider to be able to serve the patients professionally.</p>
             </div><!-- end title -->
 
             <div class="owl-services owl-carousel owl-theme">
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="static/uploads/service_01.jpg" data-rel="prettyPhoto[gal]"
+                        <a href="static/uploads/medicationadherance.jpg" data-rel="prettyPhoto[gal]"
                             class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="static/uploads/service_01.jpg" alt="" class="img-responsive img-rounded">
+                        <img src="static/uploads/medicationadherance.jpg" alt="" class="img-responsive img-rounded">
                     </div>
                     <div class="service-dit">
-                        <h3>Smart Swatch Editions</h3>
-                        <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est,
-                            convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
+                        <h3>Medication adheranc</h3>
+                        <p>Medication inadheranc is the most cause of therapy failure.</p>
                     </div>
                 </div>
                 <!-- end service -->
 
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="uploads/service_02.jpg" data-rel="prettyPhoto[gal]"
+                        <a href="ststic/uploads/medicationconsultation.jpg" data-rel="prettyPhoto[gal]"
                             class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="uploads/service_02.jpg" alt="" class="img-responsive img-rounded">
+                        <img src="ststic/uploads/medicationconsultation.jpg" alt="" class="img-responsive img-rounded">
                     </div>
                     <div class="service-dit">
-                        <h3>Web UI Kit Design</h3>
-                        <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo
-                            rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
+                        <h3>Medication Consultation</h3>
+                        <p>Medication Consultation is the most charactristic feature we have. so don't hesitate
+                            to contact us for any Consultation related to any medical field. </p>
                     </div>
                 </div>
                 <!-- end service -->

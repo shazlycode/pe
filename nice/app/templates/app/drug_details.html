@@ -1,0 +1,43 @@
+{% extends 'app/index.html' %}
+{% load static %}
+
+{% block content %}
+<html style="background-color: rgb(230, 228, 157);">
+<h1 style="border: blue; color: brown; text-align: center; text-shadow: chocolate; font-style: italic;">The Pharmaceutical Science Encyclopedia.</h1>
+<br><br>
+<h2>Drug Detalis</h2>
+<br><br><br>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2>
+                Trade Name
+            </h2>
+            {{results.trade_name}}
+            <hr>
+            <div class="float ">
+                <iframe style="align-self:stretch;"  src="https://www.bing.com/images/search?q={{results.trade_name}}" frameborder="2px" width="50%" height="320px"></iframe>
+            </div>
+            <h2>
+                Generic Name
+            </h2>
+            {{results.generic_name}}
+            <hr>
+            <h2>
+                Indications
+            </h2>
+            {{results.uses}}
+
+        </div>
+        <br><br>
+        
+ <a href="{% url 'drugindex' %}"><input type="submit" value="back" ></a>
+
+    </div>
+
+
+</section>
+
+
+{% endblock content %}
+</html>
